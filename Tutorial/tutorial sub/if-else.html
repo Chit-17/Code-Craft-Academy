@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C If...Else - CODECRAFT ACADEMY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .code-block {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .code-block code {
+            font-family: monospace;
+            color: #7dd3fc;
+        }
+        .code-keyword { color: #f472b6; }
+        .code-function { color: #7dd3fc; }
+        .code-string { color: #86efac; }
+        .code-comment { color: #64748b; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./images/img.png" alt="Logo" class="h-12">
+                <span class="ml-2 text-2xl font-bold text-orange-500">CODECRAFT</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="../../index.html" class="text-green-600 hover:text-yellow-500 font-medium">HOME</a></li>
+                    <li><a href="../../Login-form/login.html" class="text-green-600 hover:text-yellow-500 font-medium">LOG-IN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 pt-24 pb-8">
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <aside class="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0 md:mr-8">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="text-lg font-bold text-green-600 mb-4">C Tutorial</h3>
+                    <ul class="space-y-2">
+                        <li><a href="C tutorial.html" class="block px-4 py-2 hover:bg-yellow-50 rounded-lg">C INTRO</a></li>
+                        <li><a href="C operators.html" class="block px-4 py-2 hover:bg-yellow-50 rounded-lg">C OPERATORS</a></li>
+                        <li><a href="C if-else.html" class="block px-4 py-2 bg-green-100 text-green-700 rounded-lg font-medium">C IF...ELSE</a></li>
+                        <li><a href="C switch.html" class="block px-4 py-2 hover:bg-yellow-50 rounded-lg">C SWITCH</a></li>
+                        <!-- More menu items -->
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <main class="flex-1">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h1 class="text-3xl font-bold text-green-600 mb-6">C If...Else Statements</h1>
+                    
+                    <div class="prose max-w-none">
+                        <p class="text-gray-700 mb-6">
+                            Conditional statements are used to perform different actions based on different conditions.
+                        </p>
+
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">if Statement</h2>
+                        <div class="code-block mb-4">
+                            <pre><code><span class="code-keyword">if</span> (condition) {
+    <span class="code-comment">// code to be executed if condition is true</span>
+}</code></pre>
+                        </div>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
+                            <p>The condition must evaluate to true (non-zero) or false (zero).</p>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">if...else Statement</h2>
+                        <div class="code-block mb-4">
+                            <pre><code><span class="code-keyword">if</span> (condition) {
+    <span class="code-comment">// code if true</span>
+} <span class="code-keyword">else</span> {
+    <span class="code-comment">// code if false</span>
+}</code></pre>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">else if Statement</h2>
+                        <div class="code-block mb-4">
+                            <pre><code><span class="code-keyword">if</span> (condition1) {
+    <span class="code-comment">// code if condition1 true</span>
+} <span class="code-keyword">else if</span> (condition2) {
+    <span class="code-comment">// code if condition2 true</span>
+} <span class="code-keyword">else</span> {
+    <span class="code-comment">// code if all false</span>
+}</code></pre>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">Ternary Operator</h2>
+                        <div class="code-block mb-4">
+                            <pre><code>variable = (condition) ? expressionTrue : expressionFalse;</code></pre>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6 rounded-r-lg">
+                            <p>This is a shorthand if...else that assigns a value based on a condition.</p>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">Practical Example</h2>
+                        <div class="code-block">
+                            <pre><code><span class="code-keyword">int</span> time = 20;
+<span class="code-keyword">if</span> (time < 18) {
+    printf(<span class="code-string">"Good day."</span>);
+} <span class="code-keyword">else</span> {
+    printf(<span class="code-string">"Good evening."</span>);
+}
+<span class="code-comment">// Outputs "Good evening."</span></code></pre>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-between">
+                        <a href="C tutorial C Operators.html" class="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600">Previous: C Operators</a>
+                        <a href="switch.html" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Next: Switch</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 CodeCraft Academy. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

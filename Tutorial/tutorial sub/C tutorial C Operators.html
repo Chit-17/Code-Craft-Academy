@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Operators - CODECRAFT ACADEMY</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .code-block code {
+            font-family: monospace;
+            color: #7dd3fc;
+        }
+        .code-keyword {
+            color: #f472b6;
+        }
+        .code-function {
+            color: #7dd3fc;
+        }
+        .code-string {
+            color: #86efac;
+        }
+        .code-comment {
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./images/img.png" alt="Logo" class="h-12">
+                <span class="ml-2 text-2xl font-bold text-orange-500 dancing-script">CODECRAFT</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li>
+                        <a href="../../index.html" class="text-green-600 hover:text-yellow-500 font-medium transition">HOME</a>
+                    </li>
+                    <li>
+                        <a href="../../Login-form/login.html" class="text-green-600 hover:text-yellow-500 font-medium transition">LOG-IN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Categories Navigation -->
+    <nav class="mt-20 bg-yellow-50 py-4 shadow-inner">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto space-x-6 py-2">
+                <a href="c tutorial.html" class="whitespace-nowrap px-4 py-2 bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200 transition">C</a>
+                <a href="#" class="whitespace-nowrap px-4 py-2 bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200 transition">C++</a>
+                <a href="#" class="whitespace-nowrap px-4 py-2 bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200 transition">HTML</a>
+                <!-- More categories -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row">
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0 md:mr-8">
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-green-600">C Tutorial</h3>
+                    <button class="md:hidden text-orange-500" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <ul id="menuList" class="space-y-2">
+                    <li>
+                        <a href="C tutorial.html" class="block px-4 py-2 hover:bg-yellow-50 text-orange-600 rounded-lg transition">C INTRO</a>
+                    </li>
+                    <li>
+                        <a href="C tutorial syntax.html" class="block px-4 py-2 hover:bg-yellow-50 text-orange-600 rounded-lg transition">C SYNTAX</a>
+                    </li>
+                    <li>
+                        <a href="C tutorial output.html" class="block px-4 py-2 hover:bg-yellow-50 text-orange-600 rounded-lg transition">C OUTPUT</a>
+                    </li>
+                    <li>
+                        <a href="C tutorial variablse.html" class="block px-4 py-2 hover:bg-yellow-50 text-orange-600 rounded-lg transition">C VARIABLES</a>
+                    </li>
+                    <li>
+                        <a href="c tutorial C Data Types & Constants.html" class="block px-4 py-2 hover:bg-yellow-50 text-orange-600 rounded-lg transition">C DATA TYPES</a>
+                    </li>
+                    <li>
+                        <a href="C tutorial C Operators.html" class="block px-4 py-2 bg-green-100 text-green-700 rounded-lg font-medium">C OPERATORS</a>
+                    </li>
+                    <li>
+                        <a href="C if-else.html" class="block px-4 py-2 hover:bg-yellow-50 text-orange-600 rounded-lg transition">C IF...ELSE</a>
+                    </li>
+                    <!-- More menu items -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h1 class="text-3xl font-bold text-green-600 mb-6">C Operators</h1>
+                
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 mb-6">
+                        Operators are used to perform operations on variables and values. C divides operators into the following groups:
+                    </p>
+
+                    <!-- Arithmetic Operators -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">1. Arithmetic Operators</h2>
+                        <div class="overflow-x-auto mb-4">
+                            <table class="min-w-full border border-gray-200">
+                                <thead class="bg-green-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Operator</th>
+                                        <th class="px-4 py-2 text-left">Name</th>
+                                        <th class="px-4 py-2 text-left">Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">+</td>
+                                        <td class="px-4 py-2 border-b">Addition</td>
+                                        <td class="px-4 py-2 border-b">x + y</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">-</td>
+                                        <td class="px-4 py-2 border-b">Subtraction</td>
+                                        <td class="px-4 py-2 border-b">x - y</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">*</td>
+                                        <td class="px-4 py-2 border-b">Multiplication</td>
+                                        <td class="px-4 py-2 border-b">x * y</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">/</td>
+                                        <td class="px-4 py-2 border-b">Division</td>
+                                        <td class="px-4 py-2 border-b">x / y</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">%</td>
+                                        <td class="px-4 py-2 border-b">Modulus</td>
+                                        <td class="px-4 py-2 border-b">x % y</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">++</td>
+                                        <td class="px-4 py-2 border-b">Increment</td>
+                                        <td class="px-4 py-2 border-b">++x</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">--</td>
+                                        <td class="px-4 py-2 border-b">Decrement</td>
+                                        <td class="px-4 py-2 border-b">--x</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code><span class="code-keyword">int</span> x = 5, y = 2;
+<span class="code-keyword">int</span> sum = x + y;  <span class="code-comment">// 7</span>
+<span class="code-keyword">int</span> mod = x % y;  <span class="code-comment">// 1</span>
+x++;               <span class="code-comment">// x is now 6</span></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Assignment Operators -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">2. Assignment Operators</h2>
+                        <div class="overflow-x-auto mb-4">
+                            <table class="min-w-full border border-gray-200">
+                                <thead class="bg-green-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Operator</th>
+                                        <th class="px-4 py-2 text-left">Example</th>
+                                        <th class="px-4 py-2 text-left">Same As</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">=</td>
+                                        <td class="px-4 py-2 border-b">x = 5</td>
+                                        <td class="px-4 py-2 border-b">x = 5</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">+=</td>
+                                        <td class="px-4 py-2 border-b">x += 3</td>
+                                        <td class="px-4 py-2 border-b">x = x + 3</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">-=</td>
+                                        <td class="px-4 py-2 border-b">x -= 3</td>
+                                        <td class="px-4 py-2 border-b">x = x - 3</td>
+                                    </tr>
+                                    <!-- More assignment operators -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code><span class="code-keyword">int</span> x = 10;
+x += 5;  <span class="code-comment">// x is now 15</span>
+x *= 2;  <span class="code-comment">// x is now 30</span></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Operators -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">3. Comparison Operators</h2>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4 rounded-r-lg">
+                            <p>Comparison operators return 1 (true) or 0 (false).</p>
+                        </div>
+                        <div class="overflow-x-auto mb-4">
+                            <table class="min-w-full border border-gray-200">
+                                <thead class="bg-green-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Operator</th>
+                                        <th class="px-4 py-2 text-left">Name</th>
+                                        <th class="px-4 py-2 text-left">Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">==</td>
+                                        <td class="px-4 py-2 border-b">Equal to</td>
+                                        <td class="px-4 py-2 border-b">x == y</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">!=</td>
+                                        <td class="px-4 py-2 border-b">Not equal</td>
+                                        <td class="px-4 py-2 border-b">x != y</td>
+                                    </tr>
+                                    <!-- More comparison operators -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code><span class="code-keyword">int</span> x = 5, y = 3;
+printf(<span class="code-string">"%d"</span>, x > y);  <span class="code-comment">// Outputs 1 (true)</span>
+printf(<span class="code-string">"%d"</span>, x == y); <span class="code-comment">// Outputs 0 (false)</span></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Logical Operators -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">4. Logical Operators</h2>
+                        <div class="overflow-x-auto mb-4">
+                            <table class="min-w-full border border-gray-200">
+                                <thead class="bg-green-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Operator</th>
+                                        <th class="px-4 py-2 text-left">Name</th>
+                                        <th class="px-4 py-2 text-left">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">&&</td>
+                                        <td class="px-4 py-2 border-b">Logical AND</td>
+                                        <td class="px-4 py-2 border-b">Returns true if both statements are true</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">||</td>
+                                        <td class="px-4 py-2 border-b">Logical OR</td>
+                                        <td class="px-4 py-2 border-b">Returns true if one of the statements is true</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">!</td>
+                                        <td class="px-4 py-2 border-b">Logical NOT</td>
+                                        <td class="px-4 py-2 border-b">Reverse the result, returns false if the result is true</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code><span class="code-keyword">int</span> x = 5;
+printf(<span class="code-string">"%d"</span>, x > 3 && x < 10); <span class="code-comment">// 1 (true)</span>
+printf(<span class="code-string">"%d"</span>, !(x > 3));       <span class="code-comment">// 0 (false)</span></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Bitwise Operators -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-orange-600 mb-4">5. Bitwise Operators</h2>
+                        <div class="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4 rounded-r-lg">
+                            <p>Bitwise operators work on bits and perform bit-by-bit operations.</p>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full border border-gray-200">
+                                <thead class="bg-green-100">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Operator</th>
+                                        <th class="px-4 py-2 text-left">Name</th>
+                                        <th class="px-4 py-2 text-left">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">&</td>
+                                        <td class="px-4 py-2 border-b">AND</td>
+                                        <td class="px-4 py-2 border-b">Sets each bit to 1 if both bits are 1</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50">
+                                        <td class="px-4 py-2 border-b">|</td>
+                                        <td class="px-4 py-2 border-b">OR</td>
+                                        <td class="px-4 py-2 border-b">Sets each bit to 1 if one of two bits is 1</td>
+                                    </tr>
+                                    <!-- More bitwise operators -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="mt-8 flex flex-col sm:flex-row justify-between">
+                    <a href="c tutorial C Data Types & Constants.html" class="relative inline-flex items-center px-6 py-3 mb-4 sm:mb-0 overflow-hidden text-white bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full group">
+                        <span class="absolute left-0 block w-full h-0 transition-all bg-green-500 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                        <span class="relative flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            </svg>
+                            Back: Data Types
+                        </span>
+                    </a>
+                    <a href="if-else.html" class="relative inline-flex items-center px-6 py-3 overflow-hidden text-white bg-gradient-to-r from-green-500 to-yellow-400 rounded-full group">
+                        <span class="absolute left-0 block w-full h-0 transition-all bg-orange-500 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                        <span class="relative flex items-center">
+                            Next: If...Else
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-6">
+                <h2 class="text-xl font-bold">
+                    <a href="#" target="_blank" class="hover:text-yellow-300 transition">
+                        Visit my GitHub profile
+                        <i class="fab fa-github ml-2"></i>
+                    </a>
+                </h2>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
+                <div class="flex items-center">
+                    <i class="fas fa-phone-alt mr-3 text-yellow-300"></i>
+                    <span>888 4444 888</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-3 text-yellow-300"></i>
+                    <span>Av. Altair Espigón C</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menuList');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('block');
+        }
+    </script>
+</body>
+
+</html>

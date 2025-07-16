@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50', // Green
+                        secondary: '#FF9800', // Orange
+                        accent: '#FFEB3B', // Yellow
+                        dark: '#212121',
+                        light: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4CAF50;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3e8e41;
+        }
+
+        /* Custom card hover effect */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Glow effect for featured items */
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans antialiased">
+    <!-- Animated Header -->
+    <header class="bg-primary text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 animate-fade-in">
+                <img src="images/img.png" alt="Logo" class="h-14 w-14 object-contain">
+                <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-white">CodeCraft Academy</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li>
+                        <a href="index.html" class="relative px-3 py-2 text-accent font-medium group">
+                            <span>Home</span>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Tutorial/tutorial.html" class="relative px-3 py-2 text-white font-medium hover:text-accent transition-colors group">
+                            <span>Tutorial</span>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quiz page/index.html" class="relative px-3 py-2 text-white font-medium hover:text-accent transition-colors group">
+                            <span>Quiz</span>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="relative px-3 py-2 text-white font-medium hover:text-accent transition-colors group">
+                            <span>Reviews</span>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="LOG-IN/LOG-IN.html" class="relative px-3 py-2 text-white font-medium hover:text-accent transition-colors group">
+                            <span>Log-in</span>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content with Sidebar Layout -->
+    <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        <!-- Main Content (Left Side) -->
+        <main class="lg:w-2/3">
+            <!-- What Are Programming Languages? Section -->
+            <article class="mb-12 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover glow-effect">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 class="text-3xl font-bold text-dark">What Are Programming Languages?</h2>
+                        <span class="text-sm text-gray-500">Published on April 22, 2022</span>
+                    </div>
+                    <img src="images/ima3.jpg" alt="Programming Languages" class="w-full h-64 object-cover rounded-lg mb-6">
+                    <p class="text-gray-700 mb-6">
+                        A programming language is a set of grammatical rules (both syntactic and semantic) that instruct a computer or device to behave in a specific way. Each programming language has its own vocabulary—a unique set of keywords that follows a special syntax to form and organize computer instructions. These languages allow us to communicate ideas, expressions, and instructions to machines.
+                    </p>
+                    <!-- Uiverse.io Button -->
+                    <a href="#" class="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-primary transition duration-300 ease-out border-2 border-primary rounded-full shadow-md group">
+                        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
+                            <i class="fas fa-book-open"></i>
+                        </span>
+                        <span class="absolute flex items-center justify-center w-full h-full text-primary transition-all duration-300 transform group-hover:translate-x-full ease">Read full article</span>
+                        <span class="relative invisible">Read full article</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Importance of Programming Section -->
+            <article class="mb-12 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover glow-effect">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 class="text-3xl font-bold text-dark">Importance of Programming</h2>
+                        <span class="text-sm text-gray-500">Published on March 19, 2022</span>
+                    </div>
+                    <img src="images/ima2.jpg" alt="Importance of Programming" class="w-full h-64 object-cover rounded-lg mb-6">
+                    <div class="text-gray-700 mb-6 space-y-4">
+                        <p>
+                            Empowering Creativity and Problem-Solving: Programming languages are essential tools that empower individuals to create solutions. By mastering programming languages, people can bring their ideas to life, develop software applications, and devise novel solutions to real-world challenges.
+                        </p>
+                        <p>
+                            Enabling Communication with Computers: In today's society, knowing how to computer program is one of the most valuable skills. It allows us to communicate with computers and complete tasks efficiently. Programming enables us to interact with machines in ways that were not possible before. We can conduct research, design new products, manage finances, and communicate globally.
+                        </p>
+                    </div>
+                    <!-- Uiverse.io Button -->
+                    <a href="#" class="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-primary transition duration-300 ease-out border-2 border-primary rounded-full shadow-md group">
+                        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
+                            <i class="fas fa-book-open"></i>
+                        </span>
+                        <span class="absolute flex items-center justify-center w-full h-full text-primary transition-all duration-300 transform group-hover:translate-x-full ease">Read full article</span>
+                        <span class="relative invisible">Read full article</span>
+                    </a>
+                </div>
+            </article>
+        </main>
+
+        <!-- Sidebar (Right Side) -->
+        <aside class="lg:w-1/3 space-y-6">
+            <!-- Features of Programming Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-primary flex items-center">
+                        <i class="fas fa-code mr-2"></i>
+                        Features of Programming
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Feature 1 -->
+                        <div class="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-accent hover:bg-opacity-20">
+                            <h4 class="font-semibold text-dark flex items-center">
+                                <i class="fas fa-brackets-curly text-primary mr-2"></i>
+                                Syntax
+                            </h4>
+                            <p class="text-gray-600 mt-2">
+                                Specific rules and structure used to write code. Determines how code is organized and formatted.
+                            </p>
+                            <a href="#" class="inline-block mt-2 text-primary font-medium hover:underline">Read more →</a>
+                        </div>
+                        
+                        <!-- Feature 2 -->
+                        <div class="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-accent hover:bg-opacity-20">
+                            <h4 class="font-semibold text-dark flex items-center">
+                                <i class="fas fa-database text-primary mr-2"></i>
+                                Data Types
+                            </h4>
+                            <p class="text-gray-600 mt-2">
+                                Define the type of values that can be stored (e.g., numbers, strings, booleans).
+                            </p>
+                            <a href="#" class="inline-block mt-2 text-primary font-medium hover:underline">Read more →</a>
+                        </div>
+                        
+                        <!-- Feature 3 -->
+                        <div class="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-accent hover:bg-opacity-20">
+                            <h4 class="font-semibold text-dark flex items-center">
+                                <i class="fas fa-tag text-primary mr-2"></i>
+                                Variables
+                            </h4>
+                            <p class="text-gray-600 mt-2">
+                                Named memory locations that store values.
+                            </p>
+                            <a href="#" class="inline-block mt-2 text-primary font-medium hover:underline">Read more →</a>
+                        </div>
+                        
+                        <!-- Feature 4 -->
+                        <div class="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-accent hover:bg-opacity-20">
+                            <h4 class="font-semibold text-dark flex items-center">
+                                <i class="fas fa-laptop-code text-primary mr-2"></i>
+                                Programming Languages
+                            </h4>
+                            <p class="text-gray-600 mt-2">
+                                Intended for machines. Stricter and less tolerant. Precise instructions. Minimal redundancy to prevent ambiguity.
+                            </p>
+                            <a href="#" class="inline-block mt-2 text-primary font-medium hover:underline">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-primary flex items-center">
+                        <i class="fas fa-folder-open mr-2"></i>
+                        Categories
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Uiverse.io Category Cards -->
+                        <a href="#" class="category-card px-4 py-3 bg-gray-50 rounded-lg flex items-center justify-between transition-all duration-300 hover:bg-primary hover:text-white">
+                            <span>News</span>
+                            <i class="fas fa-newspaper"></i>
+                        </a>
+                        <a href="#" class="category-card px-4 py-3 bg-gray-50 rounded-lg flex items-center justify-between transition-all duration-300 hover:bg-primary hover:text-white">
+                            <span>Guides</span>
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <a href="#" class="category-card px-4 py-3 bg-gray-50 rounded-lg flex items-center justify-between transition-all duration-300 hover:bg-primary hover:text-white">
+                            <span>Reviews</span>
+                            <i class="fas fa-star"></i>
+                        </a>
+                        <a href="#" class="category-card px-4 py-3 bg-gray-50 rounded-lg flex items-center justify-between transition-all duration-300 hover:bg-primary hover:text-white">
+                            <span>How-To</span>
+                            <i class="fas fa-question-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup (Uiverse.io component) -->
+            <div class="bg-gradient-to-r from-primary to-secondary rounded-xl shadow-lg overflow-hidden p-6 text-white">
+                <h3 class="text-xl font-bold mb-2">Stay Updated</h3>
+                <p class="mb-4">Subscribe to our newsletter for the latest tutorials and resources.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email" class="flex-grow px-4 py-2 rounded-l-lg focus:outline-none text-dark">
+                    <button class="bg-accent text-dark px-4 py-2 rounded-r-lg font-medium hover:bg-opacity-90 transition">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Animated Footer -->
+    <footer class="bg-primary text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-info-circle mr-2 text-accent"></i>
+                        ABOUT-US
+                    </h2>
+                    <p class="text-gray-200">CodeCraft Academy is dedicated to providing high-quality programming education to everyone.</p>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center justify-center">
+                        <i class="fas fa-envelope mr-2 text-accent"></i>
+                        CONTACT-US
+                    </h2>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-phone mr-2 text-accent"></i>
+                            <span>888 4444 888</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-accent"></i>
+                            <span>Av. Altair Espigón C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center justify-center md:justify-end">
+                        <i class="fas fa-share-alt mr-2 text-accent"></i>
+                        FOLLOW US
+                    </h2>
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-facebook-f text-accent"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-twitter text-accent"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                            <i class="fab fa-github text-accent"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-8 pt-6 text-center text-gray-300">
+                <p>&copy; 2023 CodeCraft Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary rounded-full shadow-lg text-white flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle (would need additional HTML/JS for full functionality)
+    </script>
+</body>
+</html>
